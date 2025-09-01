@@ -23,9 +23,7 @@ It allows users to create strong, secure, and random passwords with multiple opt
 
 ---
 
-## 📸 Demo  
-![screenshot](screenshot.png)  
-*(Add your website screenshot here)*  
+
 
 ---
 
