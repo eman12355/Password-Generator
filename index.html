@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Password generator</title>
+  </head>
+  <body>
+    <div class="card" role="region" aria-label="Password Generator UI">
+      <div class="card__header">
+        <div class="title">Password Generator</div>
+      </div>
+
+      <div class="card__content">
+        <!-- Left: Controls -->
+        <div class="panel">
+          <div class="row" aria-live="polite">
+            <div class="label">Length</div>
+            <div class="value" id="lengthValue">6</div>
+          </div>
+          <input
+            id="lengthRange"
+            class="range"
+            type="range"
+            min="6"
+            max="64"
+            value="6"
+            step="1"
+            aria-label="Password length"
+          />
+          <div class="hint">Tip: 16–24 is great for most use-cases.</div>
+
+          <div class="divider"></div>
+
+          <label class="switch">
+            <input id="optLower" type="checkbox"  />
+            <span class="track"><span class="thumb"></span></span>
+            <span class="label">Include lowercase (a–z)</span>
+          </label>
+
+          <label class="switch">
+            <input id="optUpper" type="checkbox" />
+            <span class="track"><span class="thumb"></span></span>
+            <span class="label">Include uppercase (A–Z)</span>
+          </label>
+
+          <label class="switch">
+            <input id="optNumbers" type="checkbox" />
+            <span class="track"><span class="thumb"></span></span>
+            <span class="label">Include numbers (0–9)</span>
+          </label>
+
+          <label class="switch">
+            <input id="optSymbols" type="checkbox" />
+            <span class="track"><span class="thumb"></span></span>
+            <span class="label">Include symbols (!@#$%)</span>
+          </label>
+
+          <div class="divider"></div>
+
+          <div
+            class="preset-chips"
+            aria-label="Presets (no logic, hook with JS)"
+          >
+            <span class="chip" id="preset-strong">Strong 24</span>
+            <span class="chip" id="preset-balanced">Balanced 16</span>
+            <span class="chip" id="preset-pin">PIN 6</span>
+          </div>
+        </div>
+
+        <!-- Right: Output & Actions -->
+        <div class="output">
+          <div class="output__field" aria-live="polite">
+            <input
+              id="passwordOutput"
+              type="text"
+              placeholder="Your password..."
+              readonly
+            />
+            <button
+              id="copyBtn"
+              class="copy"
+              title="Copy to clipboard"
+              aria-label="Copy to clipboard"
+            >
+              <i class="fa-solid fa-copy" style="color: #f6f3f7"></i>
+            </button>
+          </div>
+
+          
+          <div class="footer">
+            <div class="left">
+              <button id="generateBtn" class="btn btn--primary">
+                <i class="fa-solid fa-bolt"></i> Generate
+              </button>
+              <button id="resetBtn" class="btn btn--ghost">
+                <i class="fa-solid fa-rotate"></i> Reset
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
